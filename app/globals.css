@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+@layer components {
+  .btn-yana-primary {
+    @apply px-6 py-3 bg-yana-bosque text-yana-blanco rounded-lg font-bold transition hover:bg-yana-agua active:scale-95;
+  }
+
+  .btn-yana-secondary {
+    @apply px-6 py-3 bg-yana-agua text-yana-blanco rounded-lg font-bold transition hover:bg-yana-bosque active:scale-95;
+  }
+
+  .btn-yana-outline {
+    @apply px-6 py-3 border-2 border-yana-bosque text-yana-bosque rounded-lg font-bold transition hover:bg-yana-bosque hover:text-yana-blanco;
+  }
+
+  .container-yana {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #2D5016 0%, #4CAF50 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-yana {
+    @apply bg-white border-l-4 border-yana-bosque rounded-lg p-6 shadow-sm hover:shadow-md transition;
+  }
+
+  .input-yana {
+    @apply w-full px-4 py-3 border-2 border-yana-tierra rounded-lg focus:outline-none focus:border-yana-bosque transition;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.6s ease-out;
+}
